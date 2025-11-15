@@ -43,12 +43,14 @@ public class Aluno {
         String mediaFormat = String.format("%.2f", media);
         String status;
         
-        if(media < 6.0){
+        if(media < 6.0 && media >= 0){
             status = "Reprovado";
-        }else if(media <= 9.0){
+        }else if(media >= 6.0 && media <= 9.0){
             status = "Aprovado";
-        }else {
+        }else if(media > 9.0 && media <= 10.00) {
             status = "Ótimo aproveitamento";
+        }else {
+            status = "Notas invalidas";
         }
         
         JOptionPane.showMessageDialog(
@@ -60,6 +62,8 @@ public class Aluno {
 
     }
 }
+
+
 
 
 
